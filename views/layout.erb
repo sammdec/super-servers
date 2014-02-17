@@ -3,12 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="/assets/favicon.ico">
 
-  <title>Save our Servers</title>
-  <meta name="decsription" content="Save your servers from mundane naming schemes">
+  <title>Super Servers</title>
+  <meta name="description" content="Save your servers from mundane naming schemes">
+
+  <link rel="stylesheet" href="/assets/application.css">
 
 </head>
 <body>
-  <%= yield %>
+  <header>
+    <h1><a href="/"><img src="/assets/logo.svg" alt="Super Servers Logo">Super Servers </a></h1>
+    <span class="powered-by">powered by the Marvel API</span>
+  </header>
+
+  <section>
+    <%= yield %>
+  </section>
+
+  <footer>
+    <p class="made-by">Made with <i class="icon-heart"></i> in London by <a href="http://maison.io">Sam Mason</a></p>
+    <p class="attributions">Data provided by Marvel. &copy; 2014 Marvel</p>
+  </footer>
 </body>
 </html>
