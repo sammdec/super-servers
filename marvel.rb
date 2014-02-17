@@ -1,5 +1,6 @@
 class Marvel
   require 'digest/md5'
+  require 'json'
   include HTTParty
   debug_output $stderr
 
@@ -14,10 +15,19 @@ class Marvel
 
   def rand_characters(limit=1)
     options = {limit: limit, offset: random_offset}
-    self.class.get('/characters', query: auth_params.merge(options))
+    get_and_parse("characters",options)
   end
 
   private
+
+  def get_and_parse(endpoint, options)
+    url = "/#{endpoint}"
+    response = self.class.get(url, query: auth_params.merge(options))
+    if response['code'] == 200
+      entities = response.fetch("data").fetch("results")
+    end
+  end
+
   def random_offset
     # 1402 is the current number of characters in the Marvel Universe
     rand(0...1402)
