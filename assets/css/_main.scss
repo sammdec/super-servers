@@ -1,0 +1,185 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Bangers);
+
+html:before,
+html:after,
+body:before,
+body:after{
+  content:"";
+  background:#2969B0;
+  position:fixed;
+  display:block;
+  z-index:5;
+}
+
+html:before{
+    height:8px;
+    left:0;
+    right:0;
+    top:0;
+}
+html:after{
+    width:8px;
+    top:0;
+    right:0;
+    bottom:0;
+}
+body:before{
+    height:8px;
+    right:0;
+    bottom:0;
+    left:0;
+}
+body:after{
+    width:8px;
+    top:0;
+    bottom:0;
+    left:0;
+}
+
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #333333;
+  background: #efefef;
+  padding: 8px;
+  @include media($large) {
+    padding: 23px;
+  }
+}
+
+header,
+footer,
+section {
+  @include outer-container;
+}
+
+header {
+  margin-top: 23px;
+  margin-bottom: 23px;
+  img {
+    vertical-align: middle;
+    margin-right: 23px;
+  }
+}
+
+h1 {
+  font-family: 'Bangers', Arial, sans-serif;
+  font-size: 70px;
+  line-height: 1.2;
+  color: #d70206;
+  margin-left: 23px;
+  letter-spacing: 2px;
+  text-shadow: 2px 4px rgb(41,105,176);
+  @include inline-block;
+  @include media($large) {
+    display: block;
+    text-align: center;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  img {
+    @include media($medium) {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+.powered-by {
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: #2969B0;
+  letter-spacing: 0;
+  text-shadow: none;
+  @include media($large) {
+    text-align: center;
+    display: block;
+  }
+}
+
+h2 {
+  margin-bottom: 11px;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 11px;
+}
+
+strong {
+  font-weight: 900;
+}
+
+a {
+  color: #d70206;
+  text-decoration: none;
+  font-weight: 700;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.character-img {
+  max-width: 100px;
+  float: left;
+  margin-right: 11px;
+  margin-bottom: 11px;
+}
+
+.purpose,
+.all-characters {
+  @include span-columns(6);
+  @include media($large) {
+    @include span-columns(12);
+    margin-bottom: 23px;
+  }
+}
+
+.hostname-suggestion {
+  clear: both;
+  @include media($medium) {
+    clear: none;
+  }
+  p {
+    display: inline;
+  }
+}
+
+footer {
+  font-size: 12px;
+  margin-top: 24px;
+}
+
+.made-by,
+.attributions {
+  @include span-columns(6);
+  @include media($medium) {
+    @include span-columns(12);
+    text-align: center !important;
+  }
+}
+
+.attributions {
+  text-align: right;
+}
+
+.heart {
+  width: 13px;
+  margin: 0 .2em;
+  vertical-align: middle;
+}
+
+pre {
+  font-family: 'Consolas', 'monaco', monospace;
+  padding: 3px 8px;
+  background: #2b303b;
+  color: #c0c5ce;
+  font-size: 18px;
+  @include inline-block;
+  border-radius: 3px;
+}
