@@ -1,1 +1,20 @@
-<%= @character %>
+<div class="purpose">
+  <h2>Need a name for your new set of servers? Why not choose one from the Marvel comic universe.</h2>
+  <p>Don't like the one you got? Just <strong>refresh</strong>.</p>
+</div> <!--  .purpose -->
+
+<div class="all-characters">
+<% @characters.each do |character|  %>
+  <div class="single-character">
+    <img class="character-img" src="<%= character['thumbnail']['path'] %>.<%= character['thumbnail']['extension'] %>" alt="<%= character['name'] %>">
+    <p>Your next Superhero server could be called <strong><%= character['name'] %></strong></p>
+
+    <div class="hostname-suggestion">
+      <p>A machine friendly version would be something like this:</p>
+      <pre><%= hostname(character['name']) %></pre>
+    </div> <!--  .hostname-suggestion -->
+
+  </div> <!--  .single-character -->
+<% end %>
+
+</div> <!--  .all-characters -->
