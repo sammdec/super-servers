@@ -168,9 +168,10 @@ pre {
 }
 
 .limit-reached {
+  font-family: 'Bangers', Arial, sans-serif;
   text-align: center;
-  font-weight: 700;
-  img {
-    max-width: 160px;
-  }
+  color: #d70206;
+  text-shadow: 1px 1px rgb(41,105,176);
+  font-size: 36px;
+  letter-spacing: 1px;
 }
