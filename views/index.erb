@@ -6,7 +6,9 @@
 <div class="all-characters">
 <% @characters.each do |character|  %>
   <div class="single-character">
-    <img class="character-img" src="<%= character['thumbnail']['path'] %>.<%= character['thumbnail']['extension'] %>" alt="<%= character['name'] %>">
+    <div class="avatar">
+      <img class="character-img" src="<%= character['thumbnail']['path'] %>.<%= character['thumbnail']['extension'] %>" alt="<%= character['name'] %>">
+    </div> <!--  .avatar -->
     <p>Your next Superhero server could be called <strong><%= character['name'] %></strong></p>
 
     <div class="hostname-suggestion">
