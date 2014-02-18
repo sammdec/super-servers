@@ -166,3 +166,11 @@ pre {
   @include inline-block;
   border-radius: 3px;
 }
+
+.limit-reached {
+  text-align: center;
+  font-weight: 700;
+  img {
+    max-width: 160px;
+  }
+}

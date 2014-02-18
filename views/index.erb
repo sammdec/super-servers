@@ -4,6 +4,7 @@
 </div> <!--  .purpose -->
 
 <div class="all-characters">
+<% if @characters %>
 <% @characters.each do |character|  %>
   <div class="single-character">
     <div class="avatar">
@@ -17,6 +18,14 @@
     </div> <!--  .hostname-suggestion -->
 
   </div> <!--  .single-character -->
+<% end %>
+
+<% else %>
+  <div class="limit-reached">
+
+    <p>Oh No! It looks like this site has reached it API limit, please try again later.</p>
+    <img src="/assets/green-goblin.jpg" alt="">
+  </div> <!--  .limit-reached -->
 <% end %>
 
 </div> <!--  .all-characters -->
